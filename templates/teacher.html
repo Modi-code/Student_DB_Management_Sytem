@@ -1,0 +1,53 @@
+<form >
+    <button formaction="/logout" type="submit">log out</button>
+</form>
+<form method="post" id="formMan">
+    <button id="i" onclick="all_prompts('i')">Insert a student</button>
+    <button id="d" onclick="all_prompts('u')">Edit the grade</button>
+    <button id="u" onclick="all_prompts('d')">Delete a student</button>
+</form>
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+    table{
+        table-layout: fixed
+    }
+    form{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+</style>
+{% for item in data %}
+<table style="width:100%">
+    <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<script>
+    function all_prompts(p){
+        formM=document.getElementById("formMan")
+        if (p=='i'){
+            name=prompt('name')
+            grade=prompt('grade')
+            formM.action="/db/insert,"+name+","+grade
+            formM.submit()
+        }
+        else if(p=='u'){
+            id=prompt('id')
+            grade=prompt('grade')
+            formM.action="/db/update,"+id+","+grade
+            formM.submit()
+        }
+        else{
+            id=prompt('id')
+            formM.action="/db/delete,"+id
+            formM.submit()
+        }
+    }
+</script>
