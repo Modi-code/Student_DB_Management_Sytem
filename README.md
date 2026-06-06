@@ -16,12 +16,13 @@ A simple Python web app for teachers to manage student grades and for students t
 * SQLite3
 
 ## To get teacher privilages
-Username: modi Password: modi
+Username: modi, Password: modi
+
 or add your own to the database and then change the label to teacher
 
 ## How to Use
 ```bash
-git clone 
+git clone https://github.com/Modi-code/Student_DB_Management_Sytem.git
 cd Student_DB_Management_System
 pip install Flask
 python app.py
