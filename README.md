@@ -20,8 +20,8 @@ Username: modi Password: modi
 or add your own to the database and then change the label to teacher
 
 ## How to Use
-'''
-git clone https://github.com/YOUR_USERNAME/Student_DB_Management_System.git
+```bash
+git clone 
 cd Student_DB_Management_System
 pip install Flask
 python app.py
